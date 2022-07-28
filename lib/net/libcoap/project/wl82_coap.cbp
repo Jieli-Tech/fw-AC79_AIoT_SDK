@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="coap" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl82/liba/libcoap.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-ffunction-sections" />
+					<Add option="-Wno-unused-value" />
+					<Add option="-D_POSIX_SOURCE" />
+					<Add option="-D_SYS_SELECT_H" />
+					<Add option="-DCONFIG_CHRDEV" />
+					<Add option="-DWITH_DTLS" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/driver/cpu/wl82" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/src/include/lwip" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/port" />
+					<Add directory="../../../../include_lib/net/libcoap" />
+					<Add directory="../../../../include_lib/net/tinydtls" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../../../../include_lib/net/libcoap/address.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/async.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/bits.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/block.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/coap.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/coap_config.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/coap_debug.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/coap_list.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/coap_net.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/coap_time.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/encode.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/hashkey.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/option.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/pdu.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/prng.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/resource.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/soap_mem.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/str.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/subscribe.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/t_list.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/uri.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/uthash.h" />
+		<Unit filename="../../../../include_lib/net/libcoap/utlist.h" />
+		<Unit filename="../src/async.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/block.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/coap_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/encode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/examples/client-dtls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/examples/client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/examples/server-dtls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/examples/server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/hashkey.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/net.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/option.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/pdu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/resource.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/str.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/subscribe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/uri.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

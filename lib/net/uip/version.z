@@ -1,0 +1,12 @@
+.section .sys.version, "ax"
+
+.global lib_uip_version
+
+lib_uip_version:
+
+#ifdef CONFIG_RELEASE_ENABLE
+
+#else
+.asciz __FILE__
+.asciz "UIP-*modified*-@{DATE}-${COMMID}"
+#endif

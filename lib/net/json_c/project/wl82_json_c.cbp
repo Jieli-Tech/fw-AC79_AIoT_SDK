@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="json_c" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl82/liba/json.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-ffunction-sections" />
+					<Add option="-Wno-unused-value" />
+					<Add option="-D_POSIX_SOURCE" />
+					<Add option="-DCONFIG_CHRDEV" />
+					<Add option="-DMC_MAINTAINER_MODE" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/net/json_c" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../../../../include_lib/net/json_c/arraylist.h" />
+		<Unit filename="../../../../include_lib/net/json_c/bits.h" />
+		<Unit filename="../../../../include_lib/net/json_c/config_j.h" />
+		<Unit filename="../../../../include_lib/net/json_c/debug.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_c_config.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_c_version.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_config.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_debug.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_inttypes.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_object.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_object_iterator.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_object_private.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_pointer.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_tokener.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_util.h" />
+		<Unit filename="../../../../include_lib/net/json_c/json_visit.h" />
+		<Unit filename="../../../../include_lib/net/json_c/linkhash.h" />
+		<Unit filename="../../../../include_lib/net/json_c/math_compat.h" />
+		<Unit filename="../../../../include_lib/net/json_c/printbuf.h" />
+		<Unit filename="../../../../include_lib/net/json_c/random_seed.h" />
+		<Unit filename="../../../../include_lib/net/json_c/snprintf_compat.h" />
+		<Unit filename="../../../../include_lib/net/json_c/strdup_compat.h" />
+		<Unit filename="../../../../include_lib/net/json_c/strerror_override.h" />
+		<Unit filename="../../../../include_lib/net/json_c/strerror_override_private.h" />
+		<Unit filename="../../../../include_lib/net/json_c/vasprintf_compat.h" />
+		<Unit filename="../src/arraylist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/json_c_version.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/json_object.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/json_object_iterator.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/json_pointer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/json_tokener.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/json_util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/json_visit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/libjson.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/linkhash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/printbuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/random_seed.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/strerror_override.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

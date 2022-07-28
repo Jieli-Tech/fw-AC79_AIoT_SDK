@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="lwip_2_1_3" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl82/liba/lwip_2_1_3.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-ffunction-sections" />
+					<Add option="-Wno-unused-value" />
+					<Add option="-D_POSIX_SOURCE" />
+					<Add option="-D_SYS_SELECT_H" />
+					<Add option="-DCONFIG_FREE_RTOS_ENABLE" />
+					<Add option="-DUSE_RTOS" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/system/device" />
+					<Add directory="../../../../include_lib/driver/cpu/wl82" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/utils" />
+					<Add directory="../../../../include_lib/driver" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/port" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/port/arch" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/app/ctp" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/app/cdp" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/app/dhcp_srv" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/app" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/app/sock_api" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/app/mssdp" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip" />
+					<Add directory="../../../../include_lib/net/device/eth" />
+					<Add directory="../../../../include_lib/net/device" />
+					<Add directory="../../../../include_lib/system/os/FreeRTOS/pi32_lto" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/altcp_proxyconnect.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/altcp_tls_mbedtls_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/fs.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/http_client.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/httpd.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/httpd_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/lwiperf.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/mdns.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/mdns_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/mdns_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/mqtt.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/mqtt_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/mqtt_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/netbiosns.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/netbiosns_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/smtp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/smtp_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmp_core.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmp_mib2.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmp_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmp_scalar.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmp_snmpv2_framework.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmp_snmpv2_usm.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmp_table.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmp_threadsync.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/snmpv3.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/sntp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/sntp_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/tftp_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/apps/tftp_server.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/cdp/cdp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/ctp/ctp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/ddns/DDNS.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/dhcp_srv/dhcp_srv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/dtp/dtp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/mssdp/mssdp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/ntp/ntp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/sock_api/sock_api.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/app/udtp/udtp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/port/arch/cc.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/port/arch/cpu.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/port/arch/perf.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/port/arch/sys_arch.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/port/lwip.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/port/lwipopts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/port/lwipopts_bt.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/port/lwipopts_sfc.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/compat/posix/arpa/inet.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/compat/posix/net/if.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/compat/posix/netdb.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/compat/posix/sys/socket.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/compat/stdc/errno.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/_errno.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/altcp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/altcp_tcp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/altcp_tls.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/api.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/arch.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/autoip.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/debug.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/def.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/dhcp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/dhcp6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/dns.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/err.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/etharp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ethip6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/icmp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/icmp6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/if_api.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/igmp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/inet.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/inet_chksum.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/init.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ip.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ip4.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ip4_addr.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ip4_frag.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ip6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ip6_addr.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ip6_frag.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ip6_zone.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/ip_addr.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/mem.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/memp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/mld6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/nd6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/netbuf.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/netdb.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/netif.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/netifapi.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/opt.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/pbuf.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/altcp_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/api_msg.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/mem_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/memp_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/memp_std.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/nd6_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/raw_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/sockets_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/tcp_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/priv/tcpip_priv.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/autoip.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/dhcp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/dhcp6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/dns.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/etharp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/ethernet.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/iana.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/icmp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/icmp6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/ieee.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/igmp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/ip.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/ip4.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/ip6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/mld6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/nd6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/tcp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/prot/udp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/raw.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/sio.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/snmp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/sockets.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/stats.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/sys.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/tcp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/tcpbase.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/tcpip.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/timeouts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/lwip/udp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/bridgeif.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/bridgeif_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/etharp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ethernet.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ieee802154.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/lowpan6.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/lowpan6_ble.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/lowpan6_common.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/lowpan6_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/ccp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/chap-md5.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/chap-new.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/chap_ms.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/eap.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/ecp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/eui64.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/fsm.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/ipcp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/ipv6cp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/lcp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/magic.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/mppe.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/polarssl/arc4.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/polarssl/des.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/polarssl/md4.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/polarssl/md5.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/polarssl/sha1.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/ppp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/ppp_impl.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/ppp_opts.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/pppapi.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/pppcrypt.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/pppdebug.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/pppoe.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/pppol2tp.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/pppos.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/upap.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/ppp/vj.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/slipif.h" />
+		<Unit filename="../../../../include_lib/net/lwip_2_1_3/lwip/src/include/netif/zepif.h" />
+		<Unit filename="../apps/cdp/cdp_server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../apps/ctp/ctp_clinent.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../apps/ctp/ctp_server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../apps/dhcp_srv/dhcp_srv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../apps/mssdp/mssdp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../apps/ntp/ntp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../apps/ping/ping.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../apps/sock_api/sock_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../port/LwIP.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../port/sys_arch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../port/wireless_ethernetif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/api/api_lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/api/api_msg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/api/err.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/api/if_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/api/netbuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/api/netdb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/api/netifapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/api/sockets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/api/tcpip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/altcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/altcp_alloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/altcp_tcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/def.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/dns.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/inet_chksum.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv4/autoip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv4/dhcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv4/etharp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv4/icmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv4/igmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv4/ip4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv4/ip4_addr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv4/ip4_frag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv6/dhcp6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv6/ethip6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv6/icmp6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv6/inet6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv6/ip6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv6/ip6_addr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv6/ip6_frag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv6/mld6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/ipv6/nd6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/mem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/memp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/netif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/pbuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/raw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/stats.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/sys.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/tcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/tcp_in.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/tcp_out.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/timeouts.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/core/udp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/bridgeif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/bridgeif_fdb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ethernet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ethernetif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/lowpan6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/lowpan6_ble.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/lowpan6_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/auth.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/ccp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/chap-md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/chap-new.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/chap_ms.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/demand.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/eap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/ecp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/eui64.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/fsm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/ipcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/ipv6cp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/lcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/magic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/mppe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/multilink.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/polarssl/arc4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/polarssl/des.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/polarssl/md4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/polarssl/md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/polarssl/sha1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/ppp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/pppapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/pppcrypt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/pppoe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/pppol2tp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/pppos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/upap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/ppp/vj.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/slipif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/netif/zepif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

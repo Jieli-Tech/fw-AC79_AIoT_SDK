@@ -1,0 +1,12 @@
+.section .sys.version, "ax"
+
+.global lib_mqtt_version
+
+lib_mqtt_version:
+
+#ifdef CONFIG_RELEASE_ENABLE
+
+#else
+.asciz __FILE__
+.asciz "MQTT-*modified*-@{DATE}-${COMMID}"
+#endif

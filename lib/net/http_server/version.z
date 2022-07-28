@@ -1,0 +1,12 @@
+.section .sys.version, "ax"
+
+.global lib_http_server_version
+
+lib_http_server_version:
+
+#ifdef CONFIG_RELEASE_ENABLE
+
+#else
+.asciz __FILE__
+.asciz "HTTP_SERVER-*modified*-@{DATE}-${COMMID}"
+#endif

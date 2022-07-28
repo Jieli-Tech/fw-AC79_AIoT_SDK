@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="aliyun" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl80/libaliyun.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-ffunction-sections" />
+					<Add option="-Wno-unused-value" />
+					<Add option="-D_POSIX_SOURCE" />
+					<Add option="-D_SYS_SELECT_H" />
+					<Add option="-DCONFIG_CHRDEV" />
+					<Add option="-D__unix__" />
+					<Add option="-DCONFIG_FREE_RTOS_ENABLE" />
+					<Add option="-DUSE_RTOS" />
+					<Add option="-DLIST_H" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/driver/cpu/wl80" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/net/mbedtls_2_2_1" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/port" />
+					<Add directory="../../../../include_lib/system/os/FreeRTOS/pi32_lto" />
+					<Add directory="../../../../include_lib/net/mqtt" />
+					<Add directory="../../../../include_lib/net/cJSON_common" />
+					<Add directory="../../../../include_lib/net/aliyun" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../certs/root_ca.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_client_adapter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_cota.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_fota.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_ipc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_log_report.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_message.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_message_cache.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_msg_process.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_opt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_ota.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_server_adapter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_shadow.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_tsl_alink.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/dm_utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/impl_gateway.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/impl_linkkit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/impl_ntp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/impl_solo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/iotx_cm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/iotx_cm_coap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../dev_model/iotx_cm_mqtt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../examples/mqtt_example.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_cjson.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_compat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_defs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_defs.h" />
+		<Unit filename="../infra/infra_log.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_net.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_prt_nwk_payload.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_report.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_sha256.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_string.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../infra/infra_timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../mqtt/iotx_mqtt_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../mqtt/mqtt_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../wrappers/HAL_TLS_mbedtls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../wrappers/wrapper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="cJSON" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl82/liba/cJSON.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-ffunction-sections" />
+					<Add option="-Wno-unused-value" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/net/cJSON_common" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../../../../include_lib/net/cJSON_common/cJSON.h" />
+		<Unit filename="../../../../include_lib/net/cJSON_common/cJSON_Utils.h" />
+		<Unit filename="../src/cJSON.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/cJSON_Utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

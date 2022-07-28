@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libmpeg" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl82/liba/libmpeg.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-ffunction-sections" />
+					<Add option="-Wno-unused-value" />
+					<Add directory="../../../../include_lib/net/libmpeg" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../../../../include_lib/net/libmpeg/mpeg-element-descriptor.h" />
+		<Unit filename="../../../../include_lib/net/libmpeg/mpeg-pes-proto.h" />
+		<Unit filename="../../../../include_lib/net/libmpeg/mpeg-ps-proto.h" />
+		<Unit filename="../../../../include_lib/net/libmpeg/mpeg-ps.h" />
+		<Unit filename="../../../../include_lib/net/libmpeg/mpeg-ts-proto.h" />
+		<Unit filename="../../../../include_lib/net/libmpeg/mpeg-ts.h" />
+		<Unit filename="../../../../include_lib/net/libmpeg/mpeg-types.h" />
+		<Unit filename="../source/mpeg-crc32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-element-descriptor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-pack-header.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-packet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-pat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-pes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-pmt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-ps-dec.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-ps-enc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-psd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-psm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-sdt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-system-header.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-ts-dec.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-ts-enc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-ts-h264.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-ts-h265.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../source/mpeg-util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

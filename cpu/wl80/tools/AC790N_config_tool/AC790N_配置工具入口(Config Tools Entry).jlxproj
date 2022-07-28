@@ -1,0 +1,110 @@
+package.path = package.path .. ';' .. cfg.dir .. '/?.lua'
+
+local lang_en = {
+    ["AC790N"]="",
+    ["打开EQ工具"]="Open EQ Tool",
+    ["打开下载目录"]="Open Download Directory",
+    ["显示原理图"]="Show Schematic Design",
+    ["检查依赖的软件包是否更新"]="Check Update",
+    ["编译前配置工具"]="Pre-compiling Config Tool",
+    ["编辑FW文件"]="FW Editing Tools",
+    ["﻿应用信息：AC790N-SDK"]="Application: AC790N-SDK",
+};
+local title = "AC790N-SDK";
+
+cfg:setTranslate("en", lang_en);
+
+local rootDir = cfg.rootDir;
+
+local pkgman = rootDir .. "/pkgman.exe";
+local req_pkgs = {"eq", "sdktool", "luaconfig", "3rd"};
+local check_prog = {pkgman};
+
+local missing_pkgs = {};
+for k, v in pairs(req_pkgs) do
+    if cfg:utilsGetPkg(v) == nil then
+        table.insert(missing_pkgs, v)
+    end
+end
+
+for k, v in pairs(missing_pkgs) do table.insert(check_prog, v) end
+
+if #missing_pkgs ~= 0 then
+    if (cfg:runProg(check_prog) ~= 0) then
+        cfg:msgBox("warn", "软件包不是最新，可能会出现问题");
+    end
+end
+
+local function_vbox_view_list = {};
+
+local doc_path = cfg.dir .. '/../../../../doc/datasheet';
+local def_bin_path = cfg.dir .. '/../cfg_tool.bin';
+local def_tone_path = cfg.dir .. '/../tone.cfg';
+local sdk_jcf_path = cfg.dir .. '/sdk.jcf';
+
+local sdktool   = cfg:utilsGetPkg("sdktool").run;
+local luaconfig = cfg:utilsGetPkg("luaconfig").run;
+local eq        = cfg:utilsGetPkg("eq").run;
+local projdir   = cfg.dir .. '/..';
+
+local fw_edit_button_view = cfg:stButton("编辑FW文件",
+    function ()
+        cfg:runProgNoWait({sdktool, '-s', fw_edit_entry, '-u', ufw_edit_entry, '-p', cfg.dir, '-r', rootDir});
+    end);
+
+local open_eq_button_view = cfg:stButton("打开EQ工具",
+    function ()
+        cfg:runProgNoWait({eq, '-f', 'br22_hardware'});
+    end);
+
+local display_doc_button_view = cfg:stButton("显示原理图",
+    function ()
+        cfg:utilsShellShow(doc_path);
+    end);
+
+local open_download_dir_button_view = cfg:stButton("打开下载目录",
+    function ()
+        cfg:utilsShellShow(projdir);
+    end);
+
+local fw_create_button_view = cfg:stButton("编译前配置工具",
+    function ()
+        cfg:runProgNoWait({luaconfig, sdk_jcf_path,
+            '-p', cfg.dir, '-r', rootDir, '-b', def_bin_path, '-t', def_tone_path});
+    end);
+
+
+table.insert(function_vbox_view_list, fw_create_button_view);
+table.insert(function_vbox_view_list, open_eq_button_view);
+table.insert(function_vbox_view_list, display_doc_button_view);
+table.insert(function_vbox_view_list, open_download_dir_button_view);
+
+
+local layout = cfg:vBox{
+    cfg:stGroup(title,
+        cfg:vBox(function_vbox_view_list)),
+    
+    cfg:stButton("检查依赖的软件包是否更新", function ()
+        local check_prog = {pkgman};
+        for k, v in pairs(req_pkgs) do table.insert(check_prog, v) end
+        if (cfg:runProg(check_prog) ~= 0) then
+            if(cfg.lang == "zh") then
+                cfg:msgBox("warn", "软件包不是最新，可能会出现问题");
+            else
+                cfg:msgBox("warn", "software Packages are not up-to-date and may have problems");
+            end
+        else
+            if(cfg.lang == "zh") then
+                cfg:msgBox("info", "已经是最新");
+            else
+                cfg:msgBox("info", "software Packages are up-to-date");
+            end
+        end
+    end),
+}
+
+cfg:addKeyInfo("jlxproj.width", "300");
+cfg:addKeyInfo("jlxproj.height", "200");
+cfg:addKeyInfo("jlxproj.title", title);
+
+cfg:setLayout(layout)

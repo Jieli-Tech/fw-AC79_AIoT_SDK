@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="iperf" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl80/liba/iperf.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-ffunction-sections" />
+					<Add option="-Wno-unused-value" />
+					<Add option="-D_POSIX_SOURCE" />
+					<Add option="-D_SYS_SELECT_H" />
+					<Add option="-DCONFIG_FREE_RTOS_ENABLE" />
+					<Add option="-DUSE_RTOS" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/driver/cpu/wl80" />
+					<Add directory="../../../../include_lib/net/lwip_2_0_3/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip_2_0_3/lwip/src/include/lwip" />
+					<Add directory="../../../../include_lib/net/lwip_2_0_3/lwip/port" />
+					<Add directory="../src" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../example/mic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../example/mis.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/cjson.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/cjson.h" />
+		<Unit filename="../src/dscp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/flowlabel.h" />
+		<Unit filename="../src/iperf.h" />
+		<Unit filename="../src/iperf_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/iperf_api.h" />
+		<Unit filename="../src/iperf_assert.h" />
+		<Unit filename="../src/iperf_auth.h" />
+		<Unit filename="../src/iperf_client_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/iperf_config.h" />
+		<Unit filename="../src/iperf_error.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/iperf_locale.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/iperf_locale.h" />
+		<Unit filename="../src/iperf_sctp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/iperf_sctp.h" />
+		<Unit filename="../src/iperf_server_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/iperf_tcp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/iperf_tcp.h" />
+		<Unit filename="../src/iperf_udp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/iperf_udp.h" />
+		<Unit filename="../src/iperf_util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/iperf_util.h" />
+		<Unit filename="../src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/net.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/net.h" />
+		<Unit filename="../src/portable_endian.h" />
+		<Unit filename="../src/queue.h" />
+		<Unit filename="../src/t_timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/t_units.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/t_uuid.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/tcp_info.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/tcp_window_size.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/tcp_window_size.h" />
+		<Unit filename="../src/timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/timer.h" />
+		<Unit filename="../src/units.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/units.h" />
+		<Unit filename="../src/version.h" />
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

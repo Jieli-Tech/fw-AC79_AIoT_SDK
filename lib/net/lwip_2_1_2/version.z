@@ -1,0 +1,12 @@
+.section .sys.version, "ax"
+
+.global lib_lwip_2_1_2_version
+
+lib_lwip_2_1_2_version:
+
+#ifdef CONFIG_RELEASE_ENABLE
+.asciz "LWIP_2_1_2-${COMMID}"
+#else
+.asciz __FILE__
+.asciz "LWIP_2_1_2-*modified*-@{DATE}-${COMMID}"
+#endif

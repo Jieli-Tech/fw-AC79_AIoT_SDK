@@ -1,0 +1,12 @@
+.section .sys.version, "ax"
+
+.global lib_mongoose_version
+
+lib_mongoose_version:
+
+#ifdef CONFIG_RELEASE_ENABLE
+
+#else
+.asciz __FILE__
+.asciz "MONGOOSE-*modified*-@{DATE}-${COMMID}"
+#endif

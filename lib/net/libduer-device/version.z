@@ -1,0 +1,12 @@
+.section .sys.version, "ax"
+
+.global lib_duer_version
+
+lib_duer_version:
+
+#ifdef CONFIG_RELEASE_ENABLE
+
+#else
+.asciz __FILE__
+.asciz "DUER-*modified*-@{DATE}-${COMMID}"
+#endif

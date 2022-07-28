@@ -1,0 +1,12 @@
+.section .sys.version, "ax"
+
+.global lib_mdns_version
+
+lib_mdns_version:
+
+#ifdef CONFIG_RELEASE_ENABLE
+
+#else
+.asciz __FILE__
+.asciz "MDNS-*modified*-@{DATE}-${COMMID}"
+#endif
