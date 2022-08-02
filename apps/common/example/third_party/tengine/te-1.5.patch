@@ -1,0 +1,294 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 32fae848..9dbd22cb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -49,8 +49,8 @@ IF (NOT CMAKE_BUILD_TYPE)
+ ENDIF()
+ 
+ # Module options
+-OPTION (TENGINE_BUILD_BENCHMARK             "Build benchmark"                           ON)
+-OPTION (TENGINE_BUILD_EXAMPLES              "Build examples"                            ON)
++OPTION (TENGINE_BUILD_BENCHMARK             "Build benchmark"                           OFF)
++OPTION (TENGINE_BUILD_EXAMPLES              "Build examples"                            OFF)
+ OPTION (TENGINE_BUILD_DEMO                  "Build demos"                               OFF)
+ OPTION (TENGINE_BUILD_TESTS                 "Build tests"                               OFF)
+ OPTION (TENGINE_BUILD_CPP_API               "Build C++ API"                             OFF)
+@@ -61,15 +61,15 @@ OPTION (TENGINE_BUILD_CONVERT_TOOL          "Build convert tool"
+ OPTION (TENGINE_BUILD_QUANT_TOOL            "Build quantization tool"                   OFF)
+ 
+ # Multithreading option
+-OPTION (TENGINE_OPENMP                      "Build with OpenMP support"                 ON)
++OPTION (TENGINE_OPENMP                      "Build with OpenMP support"                 OFF)
+ 
+ # High performance compute library standalone options
+-OPTION (TENGINE_ARCH_X86_AVX                "Build AVX2 for x86"                        ON)
++OPTION (TENGINE_ARCH_X86_AVX                "Build AVX2 for x86"                        OFF)
+ OPTION (TENGINE_ARCH_ARM_82                 "Build ARM v8.2 for ARM platform"           OFF)
+ 
+ # Standalone HCL options
+ OPTION (TENGINE_STANDALONE_HCL              "Build standalone hcl lib"                  OFF)
+-OPTION (TENGINE_STANDALONE_HCL_AUTO_LOAD    "Auto load standalone hcl lib"              ON)
++OPTION (TENGINE_STANDALONE_HCL_AUTO_LOAD    "Auto load standalone hcl lib"              OFF)
+ 
+ # Plugin options
+ OPTION (TENGINE_ENABLE_ACL                  "With Arm Compute Library support"          OFF)
+@@ -92,7 +92,7 @@ OPTION (TENGINE_ENABLE_ALL_SYMBOL           "All symbol visible"
+ OPTION (TENGINE_ENABLE_MODEL_CACHE          "NPU kernel cache file option"              OFF)
+ 
+ # Online report
+-OPTION (TENGINE_ONLINE_REPORT               "online report"                             ON)
++OPTION (TENGINE_ONLINE_REPORT               "online report"                             OFF)
+ 
+ # Do check list
+ INCLUDE ("${CMAKE_CURRENT_SOURCE_DIR}/cmake/check.cmake")
+diff --git a/cmake/summary.cmake b/cmake/summary.cmake
+index 961200e2..5270106c 100644
+--- a/cmake/summary.cmake
++++ b/cmake/summary.cmake
+@@ -35,6 +35,7 @@ MESSAGE (STATUS "    - C++ standard required:    ${CMAKE_CXX_STANDARD_REQUIRED}"
+ MESSAGE (STATUS "    - C++ standard extensions:  ${CMAKE_CXX_EXTENSIONS}")
+ MESSAGE (STATUS "    - C++ compilier version:    ${CMAKE_CXX_COMPILER_VERSION}")
+ MESSAGE (STATUS "    - C++ compilier:            ${CMAKE_CXX_COMPILER}")
++MESSAGE (STATUS "    - C++ AR:            ${CMAKE_AR}")
+ MESSAGE (STATUS "  C/C++ compilier flags:")
+ MESSAGE (STATUS "    - C   compilier flags:      ${CMAKE_C_FLAGS}")
+ MESSAGE (STATUS "    - C++ compilier flags:      ${CMAKE_CXX_FLAGS}")
+diff --git a/examples/tm_yolofastest.cpp b/examples/tm_yolofastest.cpp
+index d84b7842..376308ca 100644
+--- a/examples/tm_yolofastest.cpp
++++ b/examples/tm_yolofastest.cpp
+@@ -279,8 +279,9 @@ int Yolov3DetectionOutput::forward(const std::vector<TMat>& bottom_blobs, std::v
+         int w = bottom_top_blobs.w;
+         int h = bottom_top_blobs.h;
+         int channels = bottom_top_blobs.c;
+-        //printf("%d %d %d\n", w, h, channels);
++		printf("%d %d %d\n", w, h, channels);
+         const int channels_per_box = channels / m_num_box;
++		printf("channels_per_box=%d m_num_box=%d\n",channels_per_box,m_num_box);
+ 
+         // anchor coord + box score + num_class
+         if (channels_per_box != 4 + 1 + m_num_class)
+@@ -294,6 +295,7 @@ int Yolov3DetectionOutput::forward(const std::vector<TMat>& bottom_blobs, std::v
+         for (int pp = 0; pp < m_num_box; pp++)
+         {
+             int p = pp * channels_per_box;
++			printf("p=%d\n",p);
+             int biases_index = (int)(m_mask[pp + mask_offset]);
+             //printf("%d\n", biases_index);
+             const float bias_w = m_biases[biases_index * 2];
+@@ -436,6 +438,7 @@ static void run_yolo(graph_t graph, std::vector<BBoxRect>& boxes, int img_width,
+     yolo.init(YOLO_FASTEST);
+ 
+     int output_node_num = get_graph_output_node_number(graph);
++	fprintf(stderr ,"output_node_num=%d\n",output_node_num);
+     yolo_inputs.resize(output_node_num);
+     yolo_outputs.resize(1);
+ 
+@@ -450,6 +453,8 @@ static void run_yolo(graph_t graph, std::vector<BBoxRect>& boxes, int img_width,
+         yolo_inputs[i].h = out_dim[2];
+         yolo_inputs[i].w = out_dim[3];
+         yolo_inputs[i].data = get_tensor_buffer(out_tensor);
++
++		printf("batch=%d c=%d  h=%d  w=%d\n",out_dim[0],out_dim[1],out_dim[2],out_dim[3]);
+     }
+ 
+     std::vector<float> output_buf;
+diff --git a/source/CMakeLists.txt b/source/CMakeLists.txt
+index 8e89f64f..c2bc8c30 100644
+--- a/source/CMakeLists.txt
++++ b/source/CMakeLists.txt
+@@ -179,8 +179,9 @@ LIST (APPEND TENGINE_HEADER_PATH        "${CMAKE_BINARY_DIR}/source")
+ LIST (APPEND TENGINE_HEADER_PATH        ${TENGINE_DEVICE_HEADER_PATH})
+ LIST (APPEND TENGINE_HEADER_PATH        ${TENGINE_OP_HEADER_PATH})
+ LIST (APPEND TENGINE_HEADER_PATH        ${TENGINE_SERIALIZER_HEADER_PATH})
++LIST (APPEND TENGINE_HEADER_PATH        ${TENGINE_COMPILER_HEADER_PATH})
+ 
+-
++    MESSAGE("TENGINE_HEADER_PATH=${TENGINE_HEADER_PATH}")
+ #
+ LIST (APPEND TENGINE_LINK_PATH          ${TENGINE_DEVICE_LINK_PATH})
+ 
+@@ -249,7 +250,7 @@ ENDIF()
+ 
+ # add static and shared target
+ ADD_LIBRARY (${TENGINE_LITE_NAME}-static STATIC ${TEngine_NEXT_LIB_SRCS})
+-ADD_LIBRARY (${TENGINE_LITE_NAME}        SHARED ${TEngine_NEXT_LIB_SRCS})
++ADD_LIBRARY (${TENGINE_LITE_NAME}       )
+ 
+ 
+ # add source files to each target
+diff --git a/source/api/plugin.c b/source/api/plugin.c
+index 019ceb1c..3a49a0b7 100644
+--- a/source/api/plugin.c
++++ b/source/api/plugin.c
+@@ -22,7 +22,7 @@
+  * Author: haitao@openailab.com
+  * Revised: lswang@openailab.com
+  */
+-
++#if 0 //XY
+ #include "api/c_api.h"
+ 
+ #include "utility/sys_port.h"
+@@ -222,3 +222,4 @@ const char* get_tengine_plugin_name(int idx)
+ 
+     return h->name;
+ }
++#endif
+diff --git a/source/device/cpu/op/conv/conv_kernel_ref_int8.c b/source/device/cpu/op/conv/conv_kernel_ref_int8.c
+index ba27e50d..9051ee36 100644
+--- a/source/device/cpu/op/conv/conv_kernel_ref_int8.c
++++ b/source/device/cpu/op/conv/conv_kernel_ref_int8.c
+@@ -42,6 +42,8 @@
+ int ref_conv_int8(struct tensor* input_tensor, struct tensor* output_tensor, struct tensor* kernel,
+                   struct tensor* bias, struct conv_param* conv_param)
+ {
++
++	printf("%s   %d\n",__func__,__LINE__);
+     int batch = input_tensor->dims[0];
+     int group = conv_param->group;
+     int input_c = conv_param->input_channel / group;
+diff --git a/source/device/cpu/op/conv/conv_kernel_ref_uint8.c b/source/device/cpu/op/conv/conv_kernel_ref_uint8.c
+index 376f15ad..538e1107 100644
+--- a/source/device/cpu/op/conv/conv_kernel_ref_uint8.c
++++ b/source/device/cpu/op/conv/conv_kernel_ref_uint8.c
+@@ -42,6 +42,7 @@
+ int ref_conv_uint8(struct tensor* input_tensor, struct tensor* output_tensor, struct tensor* kernel,
+                    struct tensor* bias, struct conv_param* conv_param)
+ {
++	printf("%s   %d\n",__func__,__LINE__);
+     int batch = input_tensor->dims[0];
+     int group = conv_param->group;
+     int input_c = conv_param->input_channel / group;
+diff --git a/source/device/cpu/op/pad/pad_ref.c b/source/device/cpu/op/pad/pad_ref.c
+index fc5c93ec..654abc2d 100644
+--- a/source/device/cpu/op/pad/pad_ref.c
++++ b/source/device/cpu/op/pad/pad_ref.c
+@@ -34,7 +34,7 @@
+ #include "device/cpu/cpu_node.h"
+ #include "device/cpu/cpu_graph.h"
+ #include "device/cpu/cpu_module.h"
+-#include "memory.h"
++/* #include "memory.h" */ //XY
+ #include <math.h>
+ 
+ static int init_node(struct node_ops* node_ops, struct exec_node* exec_node, struct exec_graph* exec_graph)
+diff --git a/source/serializer/tmfile/tm2_serializer.c b/source/serializer/tmfile/tm2_serializer.c
+index 3fc87d66..8dabe92c 100644
+--- a/source/serializer/tmfile/tm2_serializer.c
++++ b/source/serializer/tmfile/tm2_serializer.c
+@@ -33,7 +33,7 @@
+ #include <io.h>
+ #else
+ #include <unistd.h>
+-#include <sys/mman.h>
++/* #include <sys/mman.h> */
+ #endif
+ 
+ #include <fcntl.h>
+diff --git a/source/system/cpu.c b/source/system/cpu.c
+index 87a6007a..f022c5b0 100644
+--- a/source/system/cpu.c
++++ b/source/system/cpu.c
+@@ -37,6 +37,8 @@
+  * Author: lswang@openailab.com
+  */
+ 
++
++#if 1  //XY
+ #include "cpu.h"
+ 
+ #include "api/c_api.h"
+@@ -47,9 +49,9 @@
+ #include <stdint.h>
+ 
+ #ifndef _MSC_VER
+-#include <pthread.h>
+-#include <sys/syscall.h>
+-#include <sched.h>
++/* #include <pthread.h> */
++/* #include <sys/syscall.h> */
++/* #include <sched.h> */
+ #include <unistd.h>
+ #endif
+ 
+@@ -127,6 +129,7 @@ int init_cpu_count()
+ static int get_max_freq_khz(int cpuid)
+ {
+     // first try, for all possible cpu
++#if 0
+     char path[256];
+     sprintf(path, "/sys/devices/system/cpu/cpufreq/stats/cpu%d/time_in_state", cpuid);
+ 
+@@ -195,13 +198,19 @@ static int get_max_freq_khz(int cpuid)
+ 
+     fclose(fp);
+ 
++
+     return max_freq_khz;
++#else
++	return 240000000;
++
++#endif
+ }
+ 
+ static int set_sched_affinity(size_t thread_affinity_mask)
+ {
+     // cpu_set_t definition
+     // ref http://stackoverflow.com/questions/16319725/android-set-thread-affinity
++#if 0
+ #ifndef CPU_SETSIZE
+ #define CPU_SETSIZE 1024
+ #endif
+@@ -254,6 +263,7 @@ static int set_sched_affinity(size_t thread_affinity_mask)
+         fprintf(stderr, "syscall error %d\n", syscallret);
+         return -1;
+     }
++#endif
+ 
+     return 0;
+ }
+@@ -395,3 +405,5 @@ size_t get_cpu_cluster_mask(int cluster)
+ 
+     return affinity_mask_all_cluster;
+ }
++
++#endif
+diff --git a/toolchains/pi32v2-ac791n.toolchain.cmake b/toolchains/pi32v2-ac791n.toolchain.cmake
+new file mode 100644
+index 00000000..bb002f8f
+--- /dev/null
++++ b/toolchains/pi32v2-ac791n.toolchain.cmake
+@@ -0,0 +1,32 @@
++# aarch64-himix100: Hi3556AV100
++
++# set cross-compiled system type, it's better not use the type which cmake cannot recognized.
++SET (CMAKE_SYSTEM_NAME Linux)
++SET (CMAKE_SYSTEM_PROCESSOR pi32v2)
++
++# when HiSilicon SDK was installed, toolchain was installed in the path as below:
++SET (CMAKE_FIND_ROOT_PATH "/opt/jieli-linux-toolchains-gcc/pi32v2/bin")
++
++# then set compiler
++SET (CMAKE_ASM_COMPILER   "/opt/jieli-linux-toolchains-gcc/pi32v2/bin/cc")
++SET (CMAKE_C_COMPILER     "/opt/jieli-linux-toolchains-gcc/pi32v2/bin/cc")
++SET (CMAKE_CXX_COMPILER   "/opt/jieli-linux-toolchains-gcc/pi32v2/bin/cxx")
++SET (CMAKE_AR             "/opt/jieli-linux-toolchains-gcc/pi32v2/bin/lto-ar")
++SET (CMAKE_RANLIB "")
++# SET(CMAKE_C_ARCHIVE_CREATE "<CMAKE_AR> -r -s <TARGET> <OBJECTS>" CACHE STRING "C Archive Create")
++# SET(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> -r -s <TARGET> <OBJECTS>" CACHE STRING "CXX Archive Create")
++# SET(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> -X -r5 -o <TARGET> <LINK_FLAGS> <OBJECTS>")
++# SET(CMAKE_C_ARCHIVE_CREATE "<CMAKE_AR> -X -r5 -o <TARGET> <LINK_FLAGS> <OBJECTS>")
++
++# set searching rules for cross-compiler
++SET (CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
++SET (CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
++SET (CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
++
++# other needed options
++SET (TENGINE_TOOLCHAIN_FLAG -g -mcpu=r3 -c -Oz -flto -std=c99 -fno-PIE -w)
++
++# it's no need to skip OpenMP for Hi3556AV100
++SET (TENGINE_FORCE_SKIP_OPENMP ON)
++
++INCLUDE_DIRECTORIES("/opt/jieli-linux-toolchains-gcc/pi32v2/include")

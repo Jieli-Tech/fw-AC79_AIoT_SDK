@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="EchoCloud" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl82/liba/libecho_cloud.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-ffunction-sections" />
+					<Add option="-Wno-unused-value" />
+					<Add option="-D_POSIX_SOURCE" />
+					<Add option="-D_SYS_SELECT_H" />
+					<Add option="-DCONFIG_CHRDEV" />
+					<Add option="-D__unix__" />
+					<Add option="-DCONFIG_FREE_RTOS_ENABLE" />
+					<Add option="-DUSE_RTOS" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/driver/cpu/wl82" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/utils" />
+					<Add directory="../../../../include_lib/driver" />
+					<Add directory="../../../../include_lib/net/mbedtls_2_2_1" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/port" />
+					<Add directory="../../../../include_lib/system/os/FreeRTOS/pi32_lto" />
+					<Add directory="../../../../include_lib/net/json_c" />
+					<Add directory="../../../../include_lib/net/mqtt" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../echo_cloud.h" />
+		<Unit filename="../echo_cloud_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../echo_cloud_http.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../echo_cloud_mqtt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../echo_cloud_nonce.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../echo_cloud_ota.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../echo_random.h" />
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

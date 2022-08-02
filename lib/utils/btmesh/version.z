@@ -1,0 +1,7 @@
+.section .sys.version, "ax"
+
+.global lib_btmesh_version
+
+lib_btmesh_version:
+.long __TIMESTAMPNUM__
+.asciz "BTMESH-@{DATE}-${COMMID}"

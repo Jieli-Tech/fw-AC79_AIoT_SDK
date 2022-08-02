@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="device_vad" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl82/liba/libvad.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-ffunction-sections" />
+					<Add option="-Wno-unused-value" />
+					<Add option="-D_POSIX_SOURCE" />
+					<Add option="-D_SYS_SELECT_H" />
+					<Add option="-DCONFIG_FREE_RTOS_ENABLE" />
+					<Add option="-DUSE_RTOS" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/driver/cpu/wl82" />
+					<Add directory="../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../src/device_vad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/division_operations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/energy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/fvad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/get_scaling_square.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/resample_48khz.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/resample_by_2_internal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/resample_fractional.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/spl_inl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/vad_core.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/vad_filterbank.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/vad_gmm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/vad_sp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

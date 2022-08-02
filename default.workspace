@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="apps/wifi_ipc/board/wl80/AC790N_WIFI_IPC.cbp" />
+		<Project filename="apps/wifi_ipc/board/wl82/AC791N_WIFI_IPC.cbp" />
+		<Project filename="apps/wifi_story_machine/board/wl80/AC790N_WIFI_STORY_MACHINE.cbp" />
+		<Project filename="apps/wifi_story_machine/board/wl82/AC791N_WIFI_STORY_MACHINE.cbp" />
+		<Project filename="apps/wifi_camera/board/wl80/AC790N_WIFI_CAMERA.cbp" />
+		<Project filename="apps/wifi_camera/board/wl82/AC791N_WIFI_CAMERA.cbp" />
+		<Project filename="apps/wifi_tuya_iot/board/wl82/AC791N_WIFI_TUYA_IOT.cbp" />
+		<Project filename="apps/scan_box/board/wl80/AC790N_SCAN_BOX.cbp" />
+		<Project filename="apps/scan_box/board/wl82/AC791N_SCAN_BOX.cbp" />
+		<Project filename="apps/demo/demo_DevKitBoard/board/wl82/AC791N_DEMO_DEMO_DEVKITBOARD.cbp" />
+		<Project filename="apps/demo/demo_video/board/wl80/AC790N_DEMO_DEMO_VIDEO.cbp" />
+		<Project filename="apps/demo/demo_video/board/wl82/AC791N_DEMO_DEMO_VIDEO.cbp" />
+		<Project filename="apps/demo/demo_ble/board/wl80/AC790N_DEMO_DEMO_BLE.cbp" />
+		<Project filename="apps/demo/demo_ble/board/wl82/AC791N_DEMO_DEMO_BLE.cbp" />
+		<Project filename="apps/demo/demo_edr/board/wl80/AC790N_DEMO_DEMO_EDR.cbp" />
+		<Project filename="apps/demo/demo_edr/board/wl82/AC791N_DEMO_DEMO_EDR.cbp" />
+		<Project filename="apps/demo/demo_ui/board/wl80/AC790N_DEMO_DEMO_UI.cbp" />
+		<Project filename="apps/demo/demo_ui/board/wl82/AC791N_DEMO_DEMO_UI.cbp" />
+		<Project filename="apps/demo/demo_audio/board/wl80/AC790N_DEMO_DEMO_AUDIO.cbp" />
+		<Project filename="apps/demo/demo_audio/board/wl82/AC791N_DEMO_DEMO_AUDIO.cbp" />
+		<Project filename="apps/demo/demo_hello/board/wl80/AC790N_DEMO_DEMO_HELLO.cbp" />
+		<Project filename="apps/demo/demo_hello/board/wl82/AC791N_DEMO_DEMO_HELLO.cbp" />
+		<Project filename="apps/demo/demo_wifi/board/wl80/AC790N_DEMO_DEMO_WIFI.cbp" />
+		<Project filename="apps/demo/demo_wifi/board/wl82/AC791N_DEMO_DEMO_WIFI.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

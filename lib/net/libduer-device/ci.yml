@@ -1,0 +1,12 @@
+Global:
+    tool : build_submitter
+
+Default:
+    profile : [test]
+
+Profiles:
+    - profile:
+      name : test
+      env : IOT-DUER-UBUN
+      command : sh ./build.sh
+      release : True

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="mdns" />
+		<Option pch_mode="2" />
+		<Option compiler="dv10" />
+		<Build>
+			<Target title="Debug">
+				<Option output="../../../_mdns" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_compiler" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-Os" />
+					<Add option="-Wall" />
+					<Add option="-DUSE_RTOS" />
+					<Add directory="/opt/pi32v2/newlib/include" />
+					<Add directory="../../mdns_sd/code" />
+					<Add directory="../../../../include_lib/net/mdns" />
+					<Add directory="../../../../include_lib/net/mdns_sd" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/net/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip/src/include/lwip" />
+					<Add directory="../../../../include_lib/net/lwip/port" />
+					<Add directory="../../../../include_lib/system/os" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/system/cpu/AC54xx" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib" />
+				</Compiler>
+				<Linker>
+					<Add directory="C:/JL/bfin/lib" />
+					<Add directory="C:/JL/dv10/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/drv_lib" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="dv10" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-Os" />
+					<Add option="-g" />
+					<Add directory="code/Peripherals" />
+					<Add directory="code/start" />
+					<Add directory="code/common" />
+				</Compiler>
+				<Linker>
+					<Add option="-lc" />
+					<Add option="-lgcc" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../../../inc/mdns/mDNSDebug.h" />
+		<Unit filename="../../../inc/mdns/mDNSPosix.h" />
+		<Unit filename="../../../inc/mdns/mDNSUNP.h" />
+		<Unit filename="../../../inc/mdns/mdnsembeddedapi.h" />
+		<Unit filename="../code/DNSCommon.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/DNSCommon.h" />
+		<Unit filename="../code/DNSDigest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/GenLinkedList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/GenLinkedList.h" />
+		<Unit filename="../code/PlatformCommon.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/PlatformCommon.h" />
+		<Unit filename="../code/lib_mdns_version.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/mDNS.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/mDNSDebug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/mDNSPosix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/mDNSUNP.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/uDNS.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../code/uDNS.h" />
+		<Unit filename="intermix.lit" />
+		<Unit filename="r_makebin.bat" />
+		<Unit filename="ram.ld" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tmallgenie" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../include_lib/liba/WL80/tmallgenie2.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-D_STDIO_H_" />
+					<Add option="-D__STDBOOL_H" />
+					<Add option="-D_POSIX_SOURCE" />
+					<Add option="-D_SYS_SELECT_H" />
+					<Add option="-DCONFIG_FREE_RTOS_ENABLE" />
+					<Add option="-DDUI_SDK_VERSION=0x030000" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/driver/cpu/WL80" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib/net/lwip/app" />
+					<Add directory="../../../../include_lib/net/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip/port" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/system/device" />
+					<Add directory="include" />
+					<Add directory="../../../../include_lib/net/device" />
+					<Add directory="../../../../include_lib/net/mqtt" />
+					<Add directory="../include" />
+					<Add directory="../../../../include_lib/net/mbedtls" />
+					<Add directory="../../../../include_lib/net/mbedtls/configs" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../deps/aligenie_audio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../deps/aligenie_notify.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../deps/aligenie_os.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../deps/aligenie_ws.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../include/aligenie_audio.h" />
+		<Unit filename="../include/aligenie_libs.h" />
+		<Unit filename="../include/aligenie_notify.h" />
+		<Unit filename="../include/aligenie_os.h" />
+		<Unit filename="../include/aligenie_sdk.h" />
+		<Unit filename="../include/aligenie_ws.h" />
+		<Unit filename="../include/auth.h" />
+		<Unit filename="../include/sdk.h" />
+		<Unit filename="../src/auth.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/sdk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

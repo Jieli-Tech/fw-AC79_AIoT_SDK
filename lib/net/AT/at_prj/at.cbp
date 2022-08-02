@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="at" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../cpu/wl80/liba/at.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-DCONFIG_FREE_RTOS_ENABLE" />
+					<Add option="-DCONFIG_THREAD_ENABLE" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../lib" />
+					<Add directory="../../../../include_lib/driver/cpu/wl80" />
+					<Add directory="../../../../include_lib/utils/event" />
+					<Add directory="../../../../include_lib/utils" />
+					<Add directory="../../../../include_lib/driver/device" />
+					<Add directory="../../../../include_lib/driver" />
+					<Add directory="../../../../include_lib/system/os/FreeRTOS" />
+					<Add directory="../../../../include_lib/system/os/FreeRTOS/pi32v2" />
+					<Add directory="../../../../lib/net" />
+					<Add directory="../../../../lib/net/AT" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app/sock_api" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/src/include/lwip" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/port" />
+					<Add directory="../../../../include_lib/net/wifi" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/src/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="./" />
+		</Compiler>
+		<Unit filename="../at.h" />
+		<Unit filename="../at_base_cmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../at_cli.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../at_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../at_log.h" />
+		<Unit filename="../at_server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../at_socket.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../at_socket.h" />
+		<Unit filename="../at_utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../common.h" />
+		<Unit filename="../rtdef.h" />
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tencent" />
+		<Option pch_mode="2" />
+		<Option compiler="pi32v2_r3_empty_compiler" />
+		<MakeCommands>
+			<Build command="" />
+			<CompileFile command="" />
+			<Clean command="" />
+			<DistClean command="" />
+			<AskRebuildNeeded command="" />
+			<SilentBuild command=" &gt; $(CMD_NULL)" />
+		</MakeCommands>
+		<Build>
+			<Target title="Release">
+				<Option output="../../../../include_lib/liba/WL80/libtencent.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="pi32v2_r3_lto_compiler" />
+				<Compiler>
+					<Add option="-flto" />
+					<Add option="-Oz" />
+					<Add option="-D_POSIX_SOURCE" />
+					<Add option="-D_SYS_SELECT_H" />
+					<Add option="-DCONFIG_FREE_RTOS_ENABLE" />
+					<Add option="-DLWIP_RAW=1" />
+					<Add option="-DTVS_SDK_VERSION=0x030000" />
+					<Add option="-DVFS_ENABLE=1" />
+					<Add directory="../tvs_sdk/inc" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/driver/cpu/WL80" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/system/device" />
+					<Add directory="../../../../include_lib/utils" />
+					<Add directory="../../../../include_lib/driver" />
+					<Add directory="../compatible/inc/tvs_api" />
+					<Add directory="../os/inc" />
+					<Add directory="../qcloud_iot_c_sdk/include/exports" />
+					<Add directory="../qcloud_iot_c_sdk/sdk_src/internal_inc" />
+					<Add directory="../qcloud_iot_c_sdk/wifi_config" />
+					<Add directory="../third_party/inc/mongoose" />
+					<Add directory="../third_party/inc/net_ping" />
+					<Add directory="../tvs_adapter" />
+					<Add directory="../tvs_common" />
+					<Add directory="../tvs_sdk/tvs_sdk_api" />
+					<Add directory="../compatible/inc" />
+					<Add directory="../qcloud_iot_c_sdk/include" />
+					<Add directory="../../../../include_lib/net/lwip/app" />
+					<Add directory="../../../../include_lib/net/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip/src/include/lwip" />
+					<Add directory="../../../../include_lib/net/lwip/port" />
+					<Add directory="../../../../include_lib/net/mbedtls" />
+					<Add directory="../../../../include_lib/net/mbedtls/configs" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/port" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/port/arch" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app/ctp" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app/cdp" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app/dhcp_srv" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app/sock_api" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app/mssdp" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/src/include/lwip" />
+					<Add directory="../../../../include_lib/net/device/eth" />
+					<Add directory="../../../../include_lib/net/device" />
+					<Add directory="../../../../include_lib/system/os/FreeRTOS/pi32_lto" />
+					<Add directory="../../../../include_lib" />
+					<Add directory="../../../../include_lib/system" />
+					<Add directory="../../../../include_lib/system/generic" />
+					<Add directory="../../../../include_lib/driver/cpu/wl80" />
+					<Add directory="../../../../include_lib/net" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/app/sock_api" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/src/include" />
+					<Add directory="../../../../include_lib/net/lwip_2_1_2/lwip/port" />
+					<Add directory="../../../../include_lib/system/os/FreeRTOS/pi32_lto" />
+					<Add directory="../../../../include_lib/net/mbedtls_2_2_1" />
+					<Add directory="../../../../include_lib/net/mbedtls_2_2_1/mbedtls" />
+					<Add directory="../../../../include_lib/net/mbedtls_2_2_1/mbedtls/configs" />
+				</Compiler>
+				<Linker>
+					<Add option="-flto" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="../compatible/inc/tvs_api/tvs_alert_adapter.h" />
+		<Unit filename="../compatible/inc/tvs_api/tvs_api.h" />
+		<Unit filename="../compatible/inc/tvs_api/tvs_authorize.h" />
+		<Unit filename="../compatible/inc/tvs_api/tvs_media_player_adapter.h" />
+		<Unit filename="../compatible/inc/tvs_api/tvs_platform_adapter.h" />
+		<Unit filename="../compatible/src/tvs_alert_implement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../compatible/src/tvs_api_compatible.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../compatible/src/tvs_audio_recorder_implement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../compatible/src/tvs_audio_track_implement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../compatible/src/tvs_authorization.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../compatible/src/tvs_media_player_implement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../compatible/src/tvs_others.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../compatible/src/tvs_system_implement.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../os/freeRTOS/os_wrapper_freeRTOS.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../os/inc/os_wrapper.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/config.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_asr.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_data_template.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_dynreg.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_error.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_gateway.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_log.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_method.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_mqtt.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_ota.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_resource.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/exports/qcloud_iot_export_system.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/lite-list.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/lite-utils.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/platform.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/qcloud_iot_export.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/qcloud_iot_export_variables.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/qcloud_iot_import.h" />
+		<Unit filename="../qcloud_iot_c_sdk/include/utils_getopt.h" />
+		<Unit filename="../qcloud_iot_c_sdk/platform/HAL_Device_freertos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/platform/HAL_OS_freertos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/platform/HAL_TCP_lwip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/platform/HAL_TLS_mbedtls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/platform/HAL_Timer_freertos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/samples/tvs/tvs_data_template_sample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/data_template_action.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/data_template_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/data_template_client_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/data_template_client_json.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/data_template_client_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/data_template_event.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/data_template_tvs_auth.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/dynreg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/asr_client.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/at_client.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/at_socket_inf.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/at_uart_hal.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/at_utils.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/data_template_action.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/data_template_client.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/data_template_client_common.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/data_template_client_json.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/data_template_event.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/data_template_tvs_auth.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/gateway_common.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/json_parser.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/log_upload.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/mqtt_client.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/mqtt_client_net.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/network_interface.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/ota_client.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/ota_fetch.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/ota_lib.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/qcloud_iot_ca.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/qcloud_iot_common.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/qcloud_iot_device.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/resource_client.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/service_mqtt.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_aes.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_base64.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_hmac.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_httpc.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_list.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_md5.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_param_check.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_ringbuff.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_sha1.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_timer.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_url_download.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/internal_inc/utils_url_upload.h" />
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/json_parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/json_token.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/mqtt_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/mqtt_client_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/mqtt_client_connect.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/mqtt_client_net.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/mqtt_client_publish.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/mqtt_client_subscribe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/mqtt_client_unsubscribe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/mqtt_client_yield.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/network_interface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/network_socket.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/network_tls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/ota_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/ota_fetch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/ota_lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/ota_mqtt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/qcloud_iot_ca.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/qcloud_iot_device.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/qcloud_iot_log.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/resource_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/service_mqtt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/string_utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_aes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_base64.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_getopt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_hmac.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_httpc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_ringbuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_sha1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_url_download.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/sdk_src/utils_url_upload.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/wifi_config/HAL_BTCombo_config.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/wifi_config/qiot_comm_service.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/wifi_config/qiot_device_bind.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/wifi_config/qiot_internal.h" />
+		<Unit filename="../qcloud_iot_c_sdk/wifi_config/qiot_wifi_config.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/wifi_config/qiot_wifi_config.h" />
+		<Unit filename="../qcloud_iot_c_sdk/wifi_config/qiot_wifi_config_error_handle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../qcloud_iot_c_sdk/wifi_config/qiot_wifi_config_log_handle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../third_party/inc/mongoose/mongoose.h" />
+		<Unit filename="../third_party/inc/mongoose/picohttpparser.h" />
+		<Unit filename="../third_party/inc/net_ping/net_ping.h" />
+		<Unit filename="../third_party/src/mongoose/mongoose.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../third_party/src/mongoose/picohttpparser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../third_party/src/net_ping/net_ping.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_adapter/tvs_alert_impl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_adapter/tvs_alert_impl.h" />
+		<Unit filename="../tvs_adapter/tvs_api_config.h" />
+		<Unit filename="../tvs_adapter/tvs_api_impl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_adapter/tvs_api_impl.h" />
+		<Unit filename="../tvs_adapter/tvs_auth_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_adapter/tvs_auth_manager.h" />
+		<Unit filename="../tvs_adapter/tvs_mediaplayer_impl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_adapter/tvs_mediaplayer_impl.h" />
+		<Unit filename="../tvs_adapter/tvs_platform_impl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_adapter/tvs_platform_impl.h" />
+		<Unit filename="../tvs_common/tvs_common_def.h" />
+		<Unit filename="../tvs_sdk/inc/executor_list.h" />
+		<Unit filename="../tvs_sdk/inc/executor_service.h" />
+		<Unit filename="../tvs_sdk/inc/minimp3.h" />
+		<Unit filename="../tvs_sdk/inc/multipart_parser.h" />
+		<Unit filename="../tvs_sdk/inc/stdbool.h" />
+		<Unit filename="../tvs_sdk/inc/stdio.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_audio_codec.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_audio_provider.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_audio_recorder_thread.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_authorize_infos.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_authorizer.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_config.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_control_manager.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_data_buffer.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_directives_handler.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_directives_processor.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_dns.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_down_channel.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_echo.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_event_manager.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_exception_report.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_executor_service.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_http_client.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_http_manager.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_ip_provider.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_iplist.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_iplist_preset.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_jsons.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_log.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_media_player_inner.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_mp3_player.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_multipart_handler.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_multipart_parser.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_preference.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_speech_manager.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_speex_api.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_speex_codec.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_state.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_threads.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_tts_player.h" />
+		<Unit filename="../tvs_sdk/inc/tvs_version.h" />
+		<Unit filename="../tvs_sdk/src/executor_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/executor_service.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/multipart_parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_audio_provider.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_authorize_infos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_authorizer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_config.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_control_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_core.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_data_buffer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_directives_handler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_directives_processor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_dns.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_down_channel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_echo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_event_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_exception_report.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_executor_service.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_http_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_http_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_ip_provider.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_iplist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_iplist_preset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_jsons.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_media_player_inner.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_multipart_handler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_multipart_parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_ping.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_preference.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_speech_manager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_state.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_threads.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/src/tvs_tts_player.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tvs_sdk/tvs_sdk_api/tvs_alert_interface.h" />
+		<Unit filename="../tvs_sdk/tvs_sdk_api/tvs_audio_recorder_interface.h" />
+		<Unit filename="../tvs_sdk/tvs_sdk_api/tvs_audio_track_interface.h" />
+		<Unit filename="../tvs_sdk/tvs_sdk_api/tvs_core.h" />
+		<Unit filename="../tvs_sdk/tvs_sdk_api/tvs_media_player_interface.h" />
+		<Unit filename="../tvs_sdk/tvs_sdk_api/tvs_preference_interface.h" />
+		<Unit filename="../tvs_sdk/tvs_sdk_api/tvs_system_interface.h" />
+		<Extensions>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="9999" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

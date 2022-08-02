@@ -1,0 +1,12 @@
+.section .sys.version, "ax"
+
+.global lib_wt_version
+
+lib_wt_version:
+
+#ifdef CONFIG_RELEASE_ENABLE
+
+#else
+.asciz __FILE__
+.asciz "WT-*modified*-@{DATE}-${COMMID}"
+#endif
